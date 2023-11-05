@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -9,6 +11,11 @@ html, body{
     height: 100vh;
     overflow: hidden;
     // font-family: ;
+}
+
+body{
+    font-family: 'Fjalla One', sans-serif;
+    transition: background-color 0.5s; 
 }
 
 img{
@@ -29,6 +36,7 @@ img{
     left: 0;
     display: flex;
     gap: 5px;
+    width: 3415px;
 }
 
 .carousel-item {
@@ -40,6 +48,7 @@ img{
     width: 450px;
     height: 550px;
     margin-top: 150px;
+    overflow: hidden;
 }
 
 footer{
@@ -61,7 +70,7 @@ justify-content: space-around;
   p{
     text-transform: uppercase;
     line-height: 100%;
-    font-size: 24px;
+    font-size: 16px;
   }
 
 }

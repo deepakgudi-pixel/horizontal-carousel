@@ -3,9 +3,9 @@ import '../styles/app.scss';
 
 const carouselItems = document.querySelector('.carousel-items');
 const activeItem = document.querySelector(".active-item");
-const imageWidth = 300; // Adjust this value based on the actual width of your images
+// const imageWidth = 100; 
 
-carouselItems.style.width = `${30 * imageWidth}px`;
+// carouselItems.style.width = `${20 * imageWidth}px`;
 
 
 const activeItemImage = document.createElement('img');
@@ -34,7 +34,7 @@ let lastScrollY = 0;
 
 window.addEventListener("wheel", (e)  => {
   
-    lastScrollY += e.deltaY;
+    lastScrollY -= e.deltaY;
     const maxScroll = carouselItems.offsetWidth - window.innerWidth;
 
     lastScrollY = Math.min(Math.max(lastScrollY, 0), maxScroll)
@@ -63,6 +63,7 @@ function checkAndUpdateActiveItem(){
                 activeItemImage.src = src;
                 lastActive = item;
                 currentLeftMostItem = item;
+
             }
 
             break;
@@ -70,18 +71,31 @@ function checkAndUpdateActiveItem(){
     }
 }
 
- 
+
+const body = document.querySelector('body');
+
  function animate(){
     currentX = lerp(currentX, lastScrollY, 0.075);
     carouselItems.style.transform = `translateX(-${currentX}px)`;
     checkAndUpdateActiveItem();
     requestAnimationFrame(animate);
+    body.style.backgroundColor = `hsl(${lastScrollY}, 50%, 50%)`;
  }
 
  animate();
 
 
 
+
+//  // Listen for the scroll event
+//  window.addEventListener('scroll', () => {
+//      // Calculate the scroll percentage based on how far you've scrolled
+//      const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+     
+//      // Use the scroll percentage to change the background color dynamically
+//      body.style.backgroundColor = `hsl(${scrollPercentage}, 50%, 50%)`;
+//  });
+ 
 
 
 
