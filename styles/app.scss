@@ -17,6 +17,12 @@ img{
     object-fit: cover;
 }
 
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .carousel-items {
     position: fixed;
     top: 0;
@@ -31,11 +37,9 @@ img{
 }
 
 .active-item{
-    position: fixed;
-    left: 30px;
-    bottom: 36px;
     width: 450px;
     height: 550px;
+    margin-top: 150px;
 }
 
 footer{
