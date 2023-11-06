@@ -37,6 +37,7 @@ img{
     display: flex;
     gap: 5px;
     width: 3415px;
+    margin-left: 2px;
 }
 
 .carousel-item {
@@ -60,6 +61,7 @@ footer{
     display: flex;
     gap: 150px;
     align-items: center;
+    justify-content: center;
 }
 
 .footer-item{

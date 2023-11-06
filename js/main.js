@@ -73,6 +73,7 @@ function checkAndUpdateActiveItem(){
 
 
 const body = document.querySelector('body');
+const footerItems = document.querySelectorAll(".footer-item p");
 
  function animate(){
     currentX = lerp(currentX, lastScrollY, 0.075);
@@ -80,6 +81,10 @@ const body = document.querySelector('body');
     checkAndUpdateActiveItem();
     requestAnimationFrame(animate);
     body.style.backgroundColor = `hsl(${lastScrollY}, 50%, 50%)`;
+    footerItems.forEach((p) => {
+        p.style.color = `hsl(${lastScrollY + 100}, 50%, 50%)`;
+      });
+ 
  }
 
  animate();
